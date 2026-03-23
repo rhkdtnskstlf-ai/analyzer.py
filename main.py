@@ -124,7 +124,7 @@ else:
                     curr["raw"] = st.text_area("내용 수정", curr["raw"], height=200, key=f"edit_{st.session_state.current_idx}")
                 
                 if st.button("🚀 정밀 분석 (5.0 Style)", use_container_width=True):
-                    prompt = f"다음 영문 내용을 번역하고, 핵심 요약과 주요 키워드를 정리해줘:\n{curr['raw']}"
+                    prompt = f"너는 간호학 전문가야. 다음 영문 내용을 전문 지식을 바탕으로 정확하게 번역하고, 핵심 임상 요약과 주요 전공 키워드를 정리해줘:\n{curr['raw']}"
                     curr["analysis"] = call_gpt("gpt-4o", [{"role": "user", "content": prompt}])
                     st.rerun()
                 
@@ -181,7 +181,7 @@ else:
 
             if c_b2.button("🚀 전체 통합 요약 분석", use_container_width=True):
                 if st.session_state.merged_data["raw"]:
-                    prompt = f"다음은 여러 페이지가 통합된 내용입니다. 전체 번역 후 핵심 내용을 요약하고 전문 용어를 정리해주세요:\n{st.session_state.merged_data['raw']}"
+                    prompt = f"너는 간호학 전문가야. 다음 통합된 영문 내용들을 전문 지식을 바탕으로 전체 번역하고, 핵심 내용, 임상 요약과 필수 전문 용어를 정리해줘:\n{st.session_state.merged_data['raw']}"
                     st.session_state.merged_data["analysis"] = call_gpt("gpt-4o", [{"role": "user", "content": prompt}])
                     st.rerun()
 

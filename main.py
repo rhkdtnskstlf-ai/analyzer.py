@@ -13,7 +13,7 @@ try:
 except:
     API_KEY = "키가 설정되지 않았습니다. Secrets를 확인하세요."
 
-st.set_page_config(page_title="심꾸니 학업 비서 v6.6", page_icon="📚", layout="wide")
+st.set_page_config(page_title="심꾸니 학업 비서 v5.1 pro", page_icon="📚", layout="wide")
 
 # [디자인 스타일 - 주임님 요청 원복본]
 st.markdown("""
